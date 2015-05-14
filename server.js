@@ -12,7 +12,7 @@ var methodOverride = require('method-override'); // simulate DELETE and PUT (exp
 
 // configuration =================
 
-mongoose.connect('mongodb://localhost/toDoListTutorial');     // connect to mongoDB database on modulus.io
+mongoose.connect('mongodb://localhost/osteo4proRdv');     // connect to mongoDB database on modulus.io
 
 app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
 app.use(morgan('dev'));                                         // log every request to the console
@@ -22,7 +22,8 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.use(methodOverride());
 
 // routes ==================================================
-require('./server/routes/todos')(app); // configure our routes
+require('./server/routes/todos')(app); // todos routes
+require('./server/routes/specialists')(app); // specialists routes
 
 // application -------------------------------------------------------------
 app.get('*', function(req, res) {

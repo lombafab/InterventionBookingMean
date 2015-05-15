@@ -24,6 +24,8 @@ app.use(methodOverride());
 // routes ==================================================
 require('./server/routes/todos')(app); // todos routes
 require('./server/routes/specialists')(app); // specialists routes
+require('./server/routes/companies')(app); // specialists routes
+
 
 // application -------------------------------------------------------------
 app.get('*', function(req, res) {

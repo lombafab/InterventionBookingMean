@@ -35,7 +35,7 @@ exports.create = function(req, res) {
     specialist.save(function(err) {
         if (err) {
             return res.status(500).json({
-                error: 'Cannot save the item'
+                error: err
             });
         }
         //res.json(article);

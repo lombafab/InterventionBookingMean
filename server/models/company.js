@@ -10,7 +10,7 @@ var CompanySchema   = new Schema({
     address: String,
     email: String,
     daysInWeek: Array,
-    specialist_id: Schema.ObjectId
+    _specialist_id: Schema.ObjectId
 });
 
 /**

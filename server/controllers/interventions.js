@@ -5,13 +5,35 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose');
+
 var Intervention = require('../models/intervention');
 var _ = require('lodash');
 
-
+var getQuery = function(req) {
+    var query = {};
+    if (req.query._company_id) {
+        query._company_id = req.query._company_id;
+    }
+    if (req.query._specialist_id){
+        query._specialist_id = req.query._specialist_id;
+    }
+    if (req.query.status){
+        query.status = req.query.status;
+    }
+    /*if(req.query.firstName){
+        query.patient = {
+            'firstName' : req.query.firstName
+        };
+    }
+    if(req.query.lastName){
+        query.patient.lastName = req.query.lastName;
+    }*/
+    return query;
+}
 
 var getAll = function(req, res) {
-    Intervention.find(function (err, interventions) {
+    console.log(getQuery(req));
+    Intervention.find(getQuery(req), function (err, interventions) {
         if (err)
             res.send(err);
         res.json(interventions);

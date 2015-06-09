@@ -11,14 +11,21 @@ var _ = require('lodash');
 
 var getQuery = function(req) {
     var query = {};
+    // filter by company_id
     if (req.query._company_id) {
         query._company_id = req.query._company_id;
     }
+    // filter by specialist_id
     if (req.query._specialist_id){
         query._specialist_id = req.query._specialist_id;
     }
+    // filter by status
     if (req.query.status){
         query.status = req.query.status;
+    }
+    //filter by date
+    if (req.query.day){
+        query.day = req.query.day;
     }
     /*if(req.query.firstName){
         query.patient = {

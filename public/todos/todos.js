@@ -1,8 +1,18 @@
 /**
  * Created by fabiolombardi on 12/05/15.
  */
-var scotchTodo = angular.module('scotchTodo', []);
-function mainController($scope,$http){
+'use strict';
+
+angular.module('myApp.todos', ['ngRoute'])
+
+.config(['$routeProvider', function($routeProvider) {
+  $routeProvider.when('/todos', {
+    templateUrl: 'todos/todos.html',
+    controller: 'ToDosCtrl'
+  });
+}])
+
+.controller('ToDosCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.todos = null;
     $scope.formData = {};
 
@@ -36,4 +46,4 @@ function mainController($scope,$http){
                 console.log('Error while deleting the task')
             });
     }
-}
+}]);

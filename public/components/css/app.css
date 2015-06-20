@@ -1,0 +1,40 @@
+/* app css stylesheet */
+
+body {
+    padding-top: 110px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 0 10px;
+}
+
+@media(min-width:768px) {
+    body {
+        padding-top: 115px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        padding: 0 0;
+    }
+}
+
+.container {
+    min-height: 80px;
+}
+
+.navbar-inverse {
+    background-color: rgb(102, 102, 102);
+    border-color: rgb(102, 102, 102);
+}
+
+.navbar-toggle {
+    margin-top: 20px;
+}
+
+.navbar-collapse {
+    border-color: none;
+}

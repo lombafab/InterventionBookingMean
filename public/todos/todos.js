@@ -12,7 +12,7 @@ angular.module('myApp.todos', ['ngRoute'])
   });
 }])
 
-.controller('ToDosCtrl', [function($scope, $http) {
+.controller('ToDosCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.todos = null;
     $scope.formData = {};
 
